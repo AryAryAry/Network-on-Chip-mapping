@@ -4,7 +4,7 @@
 #include<sstream>
 #include<cstdio>
 
-#define bw_file "BW files/G4.txt"
+#define bw_file "BW files/G4.txt" //th core-core communication cost file
 using namespace std;
 
 void swap(int *a,int *b){
@@ -205,8 +205,9 @@ int main(){ //the MAIN LOOPS
 
 			float eval_child = evaluate(mutant,rows,cols,(float *)BW,L);
 			float eval_parent = evaluate((int *)P[i],rows,cols,(float *)BW,L);
-			//cout << "gen " << g << "member "<< i << " : " << eval_parent << endl;
-
+			
+			//copying into new generation
+			
 			if(eval_child<eval_parent){
 				for(int j_new=0;j_new<L;j_new++){
 					P_next[i][j_new]=mutant[j_new];
@@ -225,7 +226,7 @@ int main(){ //the MAIN LOOPS
 			}
 		}
 
-		if(g%100==99){
+		if(g%100==99){ //checking algorithm progress every 100 generations
 			cout << "Best cost for member " <<fixed<<setprecision(4)<<indBest[g] << " in generation " << g << " = " << cost[g][indBest[g]] << "\n";
 		}
 	}
