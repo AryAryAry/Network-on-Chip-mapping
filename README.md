@@ -17,4 +17,4 @@ Files included:
 
 :eyes: C++ source code
 
-__Compilation__ : *g++ <source_code.c> -o <out_file.exe>*
+__Compilation__ : *g++ <source_code.cpp> -o <out_file.exe>*
